@@ -6,7 +6,8 @@ class KeyValuePair {
   }
 }
 
-class HashTable { // get O(1), set O(1), deleteKey O(1)
+class HashTable {
+  // get O(1), set O(1), deleteKey O(1)
 
   constructor(numBuckets = 8) {
     // Initialize your buckets here
@@ -28,26 +29,21 @@ class HashTable { // get O(1), set O(1), deleteKey O(1)
     return this.hash(key) % this.capacity;
   }
 
-
   insert(key, value) {
     // Your code here
   }
-
 
   read(key) {
     // Your code here
   }
 
-
   resize() {
     // Your code here
   }
-
 
   delete(key) {
     // Your code here
   }
 }
-
 
 module.exports = HashTable;

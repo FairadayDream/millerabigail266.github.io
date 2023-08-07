@@ -1,0 +1,126 @@
+let sayName = function(name) {
+    return 'hello'+name
+}
+//sayName(brandon)
+let sayName2 =(name)=>{
+    return 'hello' + name
+}
+//console.log(sayName2('brandon'))
+
+//implicit vs explicit return
+let addNums2 = (num1,num2)=> {
+    let sum = num1 + num2;
+    return sum;
+}
+//console.log(addNums(12.14))
+
+//implicit return must be one line
+//implicit means no curlys and no return
+let addNum2 = (num1,num2) => num1 + num2; //<-- implied this is what we return
+//console.log(addNums(12,14)); //26
+
+//return an object
+//an object is delineated by {}
+//if you need to return an object implicitly, return it in parenthesis
+let returnObj = () => {{key:'value'}} //<- tell js not a code block but an object
+
+let returnCodeBlock = () => {//<-- not an obj, but a code block}
+    let res ={};
+    return res;
+}
+
+//let res = () => [i]
+//console.log(res())
+//arr literal
+let arr = [];
+//obj literal
+let obj = {};
+
+returnCodedBlock(function(num){
+    return num+1
+});
+//returnCodedBlock(num=> num+1);
+
+//LEARNING OBJECTIVES
+/*Declare an object, and set keys and values
+Identify when to use . vs [] when accessing values of an object
+Use the obj[key] !== undefined pattern to check if a given variable that contains a key exists in an object
+Utilize Object.keys() and Object.values() in a function
+Iterate through an object using for (key in object) syntax
+Access keys and values in nested structures including arrays and objects
+Write a function that uses an object data type to keep track of the frequency of occurrences as a counter */
+// Declare an object, and set keys and values
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+
+  // Identify when to use . vs [] when accessing values of an object
+  console.log(person.name); // "John"
+  console.log(person["age"]); // 30
+
+  // Use the obj[key] !== undefined pattern to check if a given variable that contains a key exists in an object
+  let obj = { a: 1, b: 2 };
+  let key = "b";
+  if (obj[key] !== undefined) {
+    console.log("Key exists in the object");
+  } else {
+    console.log("Key does not exist in the object");
+  }
+
+  // Utilize Object.keys() and Object.values() in a function
+  function printKeysAndValues(obj) {
+    let keys = Object.keys(obj);
+    let values = Object.values(obj);
+    console.log("Keys:", keys);
+    console.log("Values:", values);
+  }
+
+  let person = { name: "John", age: 30, city: "New York" };
+  printKeysAndValues(person);
+
+  // Iterate through an object using for (key in object) syntax
+  let person = { name: "John", age: 30, city: "New York" };
+  for (let key in person) {
+    console.log(key, "=", person[key]);
+  }
+
+  // Access keys and values in nested structures including arrays and objects
+  let data = {
+    fruits: ["apple", "banana", "orange"],
+    person: {
+      name: "John",
+      age: 30
+    }
+  };
+
+  console.log(data.fruits[1]); // "banana"
+  console.log(data.person.name); // "John"
+
+  // Write a function that uses an object data type to keep track of the frequency of occurrences as a counter
+  function countOccurrences(arr) {
+    let counter = {};
+    for (let i = 0; i < arr.length; i++) {
+      let element = arr[i];
+      if (counter[element] !== undefined) {
+        counter[element] += 1;
+      } else {
+        counter[element] = 1;
+      }
+    }
+    return counter;
+  }
+
+  let fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+  console.log(countOccurrences(fruits));
+
+  //THE OBJECT TYPE
+  //EACH VALUE STORED IN AN OBJECT IS ASSOCIATED WITH A KEY
+  //KEYS ARE ALMOST ALWAYS STRINGS WHILE VALUES CAN BE ANY DATATYPE
+/* Create objects using correct syntax with a variety of values.
+Identify that an object is an unordered collection of values.
+Key into an object to receive a single value using both Bracket and Dot notation.
+Use Bracket notation to set a variable as a key in an Object.
+Implement a check to see if a key already exists within an Object.
+Understand how object precedence fits in with dot notation for objects.*/
