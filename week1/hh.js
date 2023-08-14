@@ -94,56 +94,57 @@ function bubbleSort(arr) {
 ////////////////////////////////////////////
 
 function costOfGroceries(groceries) {
-    let total=0;
+  let total = 0;
 
-    for(let i=0; i< groceries.length; i++){
-      if(groceries[i] === 'cheese'){
-       total += 5;
-      }
-      if(groceries[i] === 'butter'){
-       total += 1;
-      }
-      if(groceries[i] === 'eggs'){
-        total += 2;
-      }
-      if(groceries[i] === 'milk'){
-        total += 3;
-      }
-      if(groceries[i] === 'bread'){
-        total += 4;
-      } else if(groceries[i] === ''){
-        return 0;
-      }
+  for (let i = 0; i < groceries.length; i++) {
+    if (groceries[i] === "cheese") {
+      total += 5;
     }
-      return total;
+    if (groceries[i] === "butter") {
+      total += 1;
+    }
+    if (groceries[i] === "eggs") {
+      total += 2;
+    }
+    if (groceries[i] === "milk") {
+      total += 3;
+    }
+    if (groceries[i] === "bread") {
+      total += 4;
+    } else if (groceries[i] === "") {
+      return 0;
+    }
+  }
+  return total;
 }
 
 function mostExpensiveGroceries(groceriesList) {
-    let highestIndex = 0;
-    let currentHighestCost = costOfGroceries(groceriesList[0]);
+  let highestIndex = 0;
+  let currentHighestCost = costOfGroceries(groceriesList[0]);
 
-    for(let i = 1; i < groceriesList.length; i++){
-      let cost = costOfGroceries(groceriesList[i]);
-      if (cost > currentHighestCost){
-        highestIndex = i;
-        currentHighestCost = cost;
+  for (let i = 1; i < groceriesList.length; i++) {
+    let cost = costOfGroceries(groceriesList[i]);
+    if (cost > currentHighestCost) {
+      highestIndex = i;
+      currentHighestCost = cost;
     }
-}
-    return highestIndex;
+  }
+  return highestIndex;
 }
 
 // TESTS
 // DO NOT MODIFY ANYTHING BELOW THIS LINE
 
-const groceriesA = ['cheese', 'butter', 'eggs'];
-const groceriesB = ['eggs', 'milk', 'bread', 'bread'];
-const groceriesC = ['cheese', 'bread'];
-const groceriesD = ['eggs', 'butter'];
+const groceriesA = ["cheese", "butter", "eggs"];
+const groceriesB = ["eggs", "milk", "bread", "bread"];
+const groceriesC = ["cheese", "bread"];
+const groceriesD = ["eggs", "butter"];
 
-costOfGroceries(groceriesA);  // 8
-costOfGroceries(groceriesB);  // 13  3
-costOfGroceries(groceriesC);  // 9
-costOfGroceries(groceriesD);  // 3
+costOfGroceries(groceriesA); // 8
+costOfGroceries(groceriesB); // 13  3
+costOfGroceries(groceriesC); // 9
+costOfGroceries(groceriesD); // 3
+costOfGroceries(groceriesD); // 3)
 
 mostExpensiveGroceries([groceriesA, groceriesB, groceriesC, groceriesD]);
 
@@ -154,7 +155,10 @@ if (costOfGroceries(groceriesB) === 13) score++;
 if (costOfGroceries(groceriesC) === 9) score++;
 if (costOfGroceries(groceriesD) === 3) score++;
 
-if (mostExpensiveGroceries([groceriesA, groceriesB, groceriesC, groceriesD]) === 1) score++;
+if (
+  mostExpensiveGroceries([groceriesA, groceriesB, groceriesC, groceriesD]) === 1
+)
+  score++;
 if (mostExpensiveGroceries([groceriesA, groceriesD]) === 0) score++;
 if (mostExpensiveGroceries([groceriesA, groceriesD, groceriesC]) === 2) score++;
 

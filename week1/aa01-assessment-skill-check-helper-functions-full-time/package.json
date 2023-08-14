@@ -1,0 +1,20 @@
+{
+    "name": "week-1-skill-check-helper-functions",
+    "version": "1.0.0",
+    "description": "Mid-week skill check for week 1",
+    "directories": {
+      "test": "test"
+    },
+    "scripts": {
+      "test": "mocha",
+      "test-with-json": "mocha --reporter json"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "chai": "^4.2.0",
+      "chai-spies": "^1.0.0",
+      "mocha": "^7.0.0"
+    }
+  }
