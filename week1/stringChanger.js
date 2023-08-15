@@ -15,6 +15,7 @@ function stringChanger(word, operation) {
     return word;
   }
 }
+
 console.log(stringChanger("foo", "capitalize")); //"Foo"
 console.log(stringChanger("foo", "uppercase")); //FOO
 console.log(stringChanger("foo", "double")); //"foofoo"

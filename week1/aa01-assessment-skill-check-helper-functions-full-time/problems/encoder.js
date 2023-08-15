@@ -94,23 +94,45 @@ function wordEncoder(word, offsetIndex) {
     let encodedIndex = currentIndex + offsetIndex;
 
     if (encodedIndex >= ALPHABET.length) {
-      encodedIndex = ALPHABET.length;
+      encodedIndex -= ALPHABET.length; // Corrected calculation for wrapping around the alphabet
     }
+
     // Get the character at the encodedIndex in the ALPHABET array and add it to the encodedWord string
     encord += ALPHABET[encodedIndex];
   }
+
   // Return the encodedWord
   return encord;
 }
 
-console.log(wordEncoder("a", 5)); // Output:
-console.log(wordEncoder("word", 2)); // Output:
 /* 2. sentenceEncoder - 1 point */
 
 function sentenceEncoder(sentence) {
-  // Your code here
+  if (typeof sentence !== "string" || sentence.trim() === "") {
+    return ""; // Return an empty string for invalid input or empty sentences
+  }
+
+  const words = sentence.split(" ");
+  const encodedWords = [];
+
+  for (const word of words) {
+    const offsetIndex = word.length;
+    const encodedWord = wordEncoder(word, offsetIndex);
+    encodedWords.push(encodedWord);
+  }
+
+  return encodedWords.join(" ");
 }
 
+// Edge cases testing
+
+console.log(sentenceEncoder("")); // Output: ""
+console.log(sentenceEncoder([])); // Output: ""
+console.log(sentenceEncoder(null)); // Output: ""
+console.log(sentenceEncoder(123)); // Output: ""
+console.log(sentenceEncoder("   ")); // Output: ""
+console.log(sentenceEncoder("short")); // Output: "vtoxt"
+console.log(sentenceEncoder("")); // Output: ""
 /*
 LOCAL TESTS: Run `node problems/encoder.js` to run this node file, and debug
 your code using console.logs.
