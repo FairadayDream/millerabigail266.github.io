@@ -21,6 +21,7 @@ console.log(stringChanger("foo", "uppercase")); //FOO
 console.log(stringChanger("foo", "double")); //"foofoo"
 console.log(stringChanger("foo", "reverse")); //"oof"
 console.log(stringChanger("foo", "reverse")); //"oof"
+console.log(stringChanger("foo", "reverse")); //"oof"
 // TESTS
 // DO NOT MODIFY ANYTHING BELOW THIS LINE
 
